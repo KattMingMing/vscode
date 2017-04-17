@@ -10,12 +10,14 @@
 	min-width: 100%;
 	min-height: 100%;
 	background: rgba(22, 29, 39, 1);
+	background-image: url('/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/bg-sourcesprinkles.svg');
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage {
 	width: 90%;
 	max-width: 1200px;
 	font-size: 10px;
+	margin-top: 50px;
 }
 .vs .monaco-workbench > .part.editor > .content .welcomePage {
 	color: #6C6C6C;
@@ -140,11 +142,15 @@
 .monaco-workbench > .part.editor > .content .welcomePage .welcome {
 	display: flex;
 	flex-direction: column;
-	padding-top: 55px;
+	padding-top: 70px;
+	margin-top: 30px;
+	min-height: 500px;
+	background: rgba(22, 29, 39, 1);
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .integrations {
 	padding: 1.2em;
+	width: 100px;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage h2 {
