@@ -13,21 +13,21 @@ export function used() {
 export default () => `
 <div class="welcomePageContainer">
 	<div class="welcomePage">
-		<div class="title">
-			<h1 class="header">${escape(localize('welcomePage.vscode', "Code Intelligence"))}</h1>
-			<p class="subtitle">${escape(localize('TODO', "Code Intelligence for public and private code hosted on GitHub available at Sourcegraph.com. Get Sourcegraph for code hosted on your own servers with Sourcegraph Enterprise."))}</p>
-		</div>
 		<div class="row">
-			<div class="splash">
-				<p>
-					<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-gh-e-logo.svg"/>
-					<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-bb-logo.svg"/>
-					<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-gl-logo.svg"/>
-				</p
-				<p>
-					<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-phab-logo.svg"/>
-					<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-git-logo.svg"/>
-				</p>
+			<div class="welcome">
+				<h1 class="header">${escape(localize('welcomePage.vscode', "Code Intelligence"))}</h1>
+				<p class="subtitle">${escape(localize('TODO', "Code Intelligence for public and private code hosted on GitHub available at Sourcegraph.com. Get Sourcegraph for code hosted on your own servers with Sourcegraph Enterprise."))}</p>
+				<div class="splash">
+					<p>
+						<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-gh-e-logo.svg"/>
+						<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-bb-logo.svg"/>
+						<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-gl-logo.svg"/>
+					</p
+					<p>
+						<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-phab-logo.svg"/>
+						<img class="integrations" src="/Users/kingy/src/github.com/kattmingming/vscode/src/vs/workbench/parts/welcome/page/enterprise/sg-ent-git-logo.svg"/>
+					</p>
+				</div>
 			</div>
 			<div class="commands">
 				<h2>${escape(localize('welcomePage.start', "Get to know Sourcegraph!"))}</h2>

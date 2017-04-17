@@ -9,6 +9,7 @@
 	justify-content: center;
 	min-width: 100%;
 	min-height: 100%;
+	background: rgba(22, 29, 39, 1);
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage {
@@ -75,6 +76,23 @@
 	color: rgba(0,0,0,.8);
 	font-size: 3.6em;
 	white-space: nowrap;
+	line-height: normal;
+}
+
+.monaco-workbench > .part.editor > .content .welcomePage h2 {
+	padding-bottom: 1.3em;
+	margin: 0;
+	border: none;
+	/*font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI Light", "HelveticaNeue-Light", "Ubuntu", "Droid Sans", sans-serif;*/
+	font-weight: normal;
+	color: rgba(0,0,0,.8);
+	font-size: 3.6em;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.vs-dark .monaco-workbench > .part.editor > .content .welcomePage h2 {
+	color: white;
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage h1 {
@@ -91,16 +109,17 @@
 	flex: 1 100%;
 }
 .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
-	max-width: 33%;
 	margin-top: .8em;
 	font-size: 1.6em;
 	line-height: 1.6em;
 	color: rgba(0,0,0,.53);
+	white-space: pre-wrap;
 	display: block;
+	max-width: 400px;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .header {
-	padding-bottom: 1.3em;
+	padding-bottom: 0.6em;
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
@@ -113,8 +132,15 @@
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .splash,
-.monaco-workbench > .part.editor > .content .welcomePage .commands {
-	flex: 1 1 0;
+.monaco-workbench > .part.editor > .content .welcomePage .commands,
+.monaco-workbench > .part.editor > .content .welcomePage .welcome {
+	flex: 1 1 33%;
+}
+
+.monaco-workbench > .part.editor > .content .welcomePage .welcome {
+	display: flex;
+	flex-direction: column;
+	padding-top: 55px;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .integrations {
@@ -196,7 +222,7 @@
 	margin: 0;
 	padding: 12px 10px;
 	width: 100%;
-	height: 5em;
+	height: 7em;
 	font-size: 1.3em;
 	text-align: left;
 	outline: none;
@@ -239,11 +265,12 @@
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button {
 	color: #828282;
-	background: #191919;
+	background:rgba(37, 49, 66, 1);
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover {
-	background: #2a2d2e;
+	background: rgba(255, 255, 255, 1);
+	color: rgba(22, 29, 39, 1);
 }
 
 .vs .monaco-workbench > .part.editor > .content .welcomePage .commands li button:focus {
@@ -264,6 +291,7 @@
 
 .hc-black .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover {
 	outline: 1px dashed #f38518;
+	color: rgba(22, 29, 39, 1);
 	outline-offset: -5px;
 }
 
