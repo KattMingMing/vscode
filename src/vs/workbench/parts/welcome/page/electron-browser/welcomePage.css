@@ -78,7 +78,7 @@
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage h1 {
-	color: rgba(255,255,255,.76);
+	color: white;
 }
 
 .hc-black .monaco-workbench > .part.editor > .content .welcomePage h1 {
@@ -91,13 +91,20 @@
 	flex: 1 100%;
 }
 .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
+	max-width: 33%;
 	margin-top: .8em;
-	font-size: 2.6em;
+	font-size: 1.6em;
+	line-height: 1.6em;
 	color: rgba(0,0,0,.53);
 	display: block;
 }
+
+.monaco-workbench > .part.editor > .content .welcomePage .header {
+	padding-bottom: 1.3em;
+}
+
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
-	color: rgba(255,255,255,.46);
+	color: white;
 }
 
 .hc-black .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
@@ -108,6 +115,10 @@
 .monaco-workbench > .part.editor > .content .welcomePage .splash,
 .monaco-workbench > .part.editor > .content .welcomePage .commands {
 	flex: 1 1 0;
+}
+
+.monaco-workbench > .part.editor > .content .welcomePage .integrations {
+	padding: 1.2em;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage h2 {

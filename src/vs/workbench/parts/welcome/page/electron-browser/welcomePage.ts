@@ -6,7 +6,6 @@
 
 import 'vs/css!./welcomePage';
 import URI from 'vs/base/common/uri';
-import * as path from 'path';
 import * as arrays from 'vs/base/common/arrays';
 import { WalkThroughInput } from 'vs/workbench/parts/welcome/walkThrough/node/walkThroughInput';
 import { IWorkbenchContribution } from 'vs/workbench/common/contributions';
@@ -19,7 +18,7 @@ import { IWindowService, IWindowsService } from 'vs/platform/windows/common/wind
 import { TPromise } from 'vs/base/common/winjs.base';
 import { IWorkspaceContextService } from 'vs/platform/workspace/common/workspace';
 import { IConfigurationService } from 'vs/platform/configuration/common/configuration';
-import { IConfigurationEditingService, ConfigurationTarget } from 'vs/workbench/services/configuration/common/configurationEditing';
+import { IConfigurationEditingService } from 'vs/workbench/services/configuration/common/configurationEditing';
 import { localize } from 'vs/nls';
 import { Action } from 'vs/base/common/actions';
 import { ITelemetryService } from 'vs/platform/telemetry/common/telemetry';
@@ -32,7 +31,6 @@ import { IExtensionEnablementService, IExtensionManagementService, IExtensionGal
 import { used } from 'vs/workbench/parts/welcome/page/electron-browser/vs_code_welcome_page';
 import { ILifecycleService } from 'vs/platform/lifecycle/common/lifecycle';
 import { IDisposable, dispose } from 'vs/base/common/lifecycle';
-import { tildify } from "vs/base/common/labels";
 
 used();
 
@@ -87,16 +85,6 @@ export class WelcomePageAction extends Action {
 	}
 }
 
-const reorderedQuickLinks = [
-	'showInterfaceOverview',
-	'selectTheme',
-	'showRecommendedKeymapExtensions',
-	'showCommands',
-	'keybindingsReference',
-	'openGlobalSettings',
-	'showInteractivePlayground',
-];
-
 class WelcomePage {
 
 	private disposables: IDisposable[] = [];
@@ -135,71 +123,6 @@ class WelcomePage {
 	}
 
 	private onReady(container: HTMLElement, recentlyOpened: TPromise<{ files: string[]; folders: string[]; }>, installedKeymaps: TPromise<IKeymapExtension[]>): void {
-		const enabled = this.configurationService.lookup<boolean>(enabledKey).value;
-		const showOnStartup = <HTMLInputElement>container.querySelector('#showOnStartup');
-		if (enabled) {
-			showOnStartup.setAttribute('checked', 'checked');
-		}
-		showOnStartup.addEventListener('click', e => {
-			this.configurationEditingService.writeConfiguration(ConfigurationTarget.USER, { key: enabledKey, value: showOnStartup.checked })
-				.then(null, error => this.messageService.show(Severity.Error, error));
-		});
-
-		recentlyOpened.then(({ folders }) => {
-			if (this.contextService.hasWorkspace()) {
-				const current = this.contextService.getWorkspace().resource.fsPath;
-				folders = folders.filter(folder => folder !== current);
-			}
-			if (!folders.length) {
-				const recent = container.querySelector('.welcomePage') as HTMLElement;
-				recent.classList.add('emptyRecent');
-				return;
-			}
-			const ul = container.querySelector('.recent ul');
-			folders.slice(0, 5).forEach(folder => {
-				const li = document.createElement('li');
-
-				const a = document.createElement('a');
-				let name = path.basename(folder);
-				let parentFolder = path.dirname(folder);
-				if (!name && parentFolder) {
-					const tmp = name;
-					name = parentFolder;
-					parentFolder = tmp;
-				}
-				a.innerText = name;
-				a.title = folder;
-				a.href = 'javascript:void(0)';
-				a.addEventListener('click', e => {
-					this.telemetryService.publicLog('workbenchActionExecuted', {
-						id: 'openRecentFolder',
-						from: telemetryFrom
-					});
-					this.windowsService.openWindow([folder], { forceNewWindow: e.ctrlKey || e.metaKey });
-					e.preventDefault();
-					e.stopPropagation();
-				});
-				li.appendChild(a);
-
-				const span = document.createElement('span');
-				span.classList.add('path');
-				span.innerText = tildify(parentFolder, this.environmentService.userHome);
-				span.title = folder;
-				li.appendChild(span);
-
-				ul.appendChild(li);
-			});
-		}).then(null, onUnexpectedError);
-
-		if (this.telemetryService.getExperiments().reorderQuickLinks) {
-			reorderedQuickLinks.forEach(clazz => {
-				const link = container.querySelector(`.commands .${clazz}`);
-				if (link) {
-					link.parentElement.appendChild(link);
-				}
-			});
-		}
-
 		container.addEventListener('click', event => {
 			for (let node = event.target as HTMLElement; node; node = node.parentNode as HTMLElement) {
 				if (node instanceof HTMLAnchorElement && node.classList.contains('installKeymap')) {
