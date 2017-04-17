@@ -187,6 +187,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	padding-bottom: 10px;
 }
 .monaco-workbench > .part.editor > .content .welcomePage .splash .recent .path {
 	padding-left: 1em;
@@ -222,14 +223,16 @@
 	padding: 0;
 }
 .monaco-workbench > .part.editor > .content .welcomePage .commands li {
-	margin: 7px 0px;
+	border-radius: 3px;
+	margin: 15px 0px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
 }
+
 .monaco-workbench > .part.editor > .content .welcomePage .commands li button {
 	margin: 0;
-	padding: 12px 10px;
+	padding: 12px 25px;
 	width: 100%;
 	height: 7em;
-	font-size: 1.3em;
 	text-align: left;
 	outline: none;
 	cursor: pointer;
@@ -240,13 +243,20 @@
 	display: inline-block;
 	width:100%;
 	color: rgba(189, 192, 197, 1);
+	font-size: 1.2em;
+}
+
+.monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover > span {
+	color: rgba(22, 29, 39, 1);
+	font-size: 1.2;
+	font-weight: normal;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .commands li button h3 {
-	font-weight: normal;
-	font-size: 1.2em;
+	font-weight: bold;
+	font-size: 1.3em;
 	margin: 0;
-	margin-bottom: 0.8em;
+	margin-bottom: 0.5em;
 }
 
 .vs .monaco-workbench > .part.editor > .content .welcomePage .commands li button h3 {
@@ -258,8 +268,25 @@
 	background:rgba(0,0,0,.04);
 	border: none;
 }
+
 .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover {
 	background:rgba(0,0,0,.10);
+	color: black;
+}
+
+.vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover {
+	background: rgba(255, 255, 255, 1);
+	color: rgba(22, 29, 39, 1);
+}
+
+.monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover > h3 {
+	font-weight: bold;
+	color: rgba(22, 29, 39, 1);
+}
+
+.vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover > h3 {
+	font-weight: bold;
+	color: rgba(22, 29, 39, 1);
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button > h3 {
@@ -273,11 +300,6 @@
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button {
 	color: #828282;
 	background:rgba(37, 49, 66, 1);
-}
-
-.vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button:hover {
-	background: rgba(255, 255, 255, 1);
-	color: rgba(22, 29, 39, 1);
 }
 
 .vs .monaco-workbench > .part.editor > .content .welcomePage .commands li button:focus {
