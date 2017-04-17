@@ -76,19 +76,18 @@
 	/*font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI Light", "HelveticaNeue-Light", "Ubuntu", "Droid Sans", sans-serif;*/
 	font-weight: normal;
 	color: rgba(0,0,0,.8);
-	font-size: 3.6em;
+	font-size: 4.8em;
 	white-space: nowrap;
 	line-height: normal;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage h2 {
-	padding-bottom: 1.3em;
+	padding-bottom: 0.6em;
 	margin: 0;
 	border: none;
 	/*font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI Light", "HelveticaNeue-Light", "Ubuntu", "Droid Sans", sans-serif;*/
 	font-weight: normal;
 	color: rgba(0,0,0,.8);
-	font-size: 3.6em;
 	white-space: nowrap;
 	text-align: center;
 }
@@ -113,7 +112,7 @@
 .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
 	margin-top: .8em;
 	font-size: 1.6em;
-	line-height: 1.6em;
+	line-height: 1.8em;
 	color: rgba(0,0,0,.53);
 	white-space: pre-wrap;
 	display: block;
@@ -157,7 +156,7 @@
 	font-weight: 200;
 	margin-top: 17px;
 	margin-bottom: 5px;
-	font-size: 1.9em;
+	font-size: 2.3em;
 	line-height: initial;
 }
 
