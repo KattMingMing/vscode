@@ -111,12 +111,13 @@
 }
 .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
 	margin-top: .8em;
-	font-size: 1.6em;
+	font-size: 1.7em;
 	line-height: 1.8em;
 	color: rgba(0,0,0,.53);
 	white-space: pre-wrap;
 	display: block;
-	max-width: 400px;
+	max-width: 425px;
+	font-weight: 100;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .header {
@@ -129,7 +130,6 @@
 
 .hc-black .monaco-workbench > .part.editor > .content .welcomePage .subtitle {
 	color: white;
-	font-weight: 200;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .splash,
@@ -148,8 +148,9 @@
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .integrations {
-	padding: 1.2em;
-	width: 100px;
+	padding-top: 1.2em;
+	padding-right: 1.2em;
+	height: 26px;
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage h2 {
@@ -238,13 +239,14 @@
 .monaco-workbench > .part.editor > .content .welcomePage .commands li button > span {
 	display: inline-block;
 	width:100%;
+	color: rgba(189, 192, 197, 1);
 }
 
 .monaco-workbench > .part.editor > .content .welcomePage .commands li button h3 {
 	font-weight: normal;
-	font-size: 1em;
+	font-size: 1.2em;
 	margin: 0;
-	margin-bottom: .25em;
+	margin-bottom: 0.8em;
 }
 
 .vs .monaco-workbench > .part.editor > .content .welcomePage .commands li button h3 {
@@ -261,7 +263,7 @@
 }
 
 .vs-dark .monaco-workbench > .part.editor > .content .welcomePage .commands li button > h3 {
-	color: #ccc;
+	color: white;
 }
 
 .hc-black .monaco-workbench > .part.editor > .content .welcomePage .commands li button > h3 {
