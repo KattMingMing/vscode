@@ -17,11 +17,13 @@ export class DecorationToRender {
 	public startLineNumber: number;
 	public endLineNumber: number;
 	public className: string;
+	public hoverMessage: string;
 
-	constructor(startLineNumber: number, endLineNumber: number, className: string) {
+	constructor(startLineNumber: number, endLineNumber: number, className: string, hoverMessage: string) {
 		this.startLineNumber = +startLineNumber;
 		this.endLineNumber = +endLineNumber;
 		this.className = String(className);
+		this.hoverMessage = hoverMessage;
 	}
 }
 

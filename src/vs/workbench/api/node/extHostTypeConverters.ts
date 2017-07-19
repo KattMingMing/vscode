@@ -149,6 +149,8 @@ export function fromRangeOrRangeWithMessage(ranges: vscode.Range[] | vscode.Deco
 			return {
 				range: fromRange(r.range),
 				hoverMessage: r.hoverMessage,
+				glyphMarginHoverMessage: r.glyphMarginHoverMessage,
+				glyphMarginClassName: r.glyphMarginClassName,
 				renderOptions: <any> /* URI vs Uri */r.renderOptions
 			};
 		});

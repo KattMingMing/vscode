@@ -812,10 +812,17 @@ export abstract class CommonCodeEditor extends Disposable implements editorCommo
 				}
 				newDecorationsSubTypes[subType] = true;
 			}
-			let opts = this._resolveDecorationOptions(typeKey, !!decorationOption.hoverMessage);
+			let opts = this._resolveDecorationOptions(typeKey, !!decorationOption.hoverMessage || !!decorationOption.glyphMarginHoverMessage);
 			if (decorationOption.hoverMessage) {
 				opts.hoverMessage = decorationOption.hoverMessage;
 			}
+			if (decorationOption.glyphMarginHoverMessage) {
+				opts.glyphMarginHoverMessage = decorationOption.glyphMarginHoverMessage;
+			}
+			if (decorationOption.glyphMarginClassName) {
+				opts.glyphMarginClassName = decorationOption.glyphMarginClassName;
+			}
+
 			newModelDecorations.push({ range: decorationOption.range, options: opts });
 		}
 

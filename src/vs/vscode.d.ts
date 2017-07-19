@@ -965,6 +965,10 @@ declare module 'vscode' {
 		 */
 		hoverMessage?: MarkedString | MarkedString[];
 
+		glyphMarginHoverMessage?: MarkedString | MarkedString[];
+
+		glyphMarginClassName?: string;
+
 		/**
 		 * Render options applied to the current decoration. For performance reasons, keep the
 		 * number of decoration specific options small, and use decoration types whereever possible.

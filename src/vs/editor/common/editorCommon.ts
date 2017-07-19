@@ -1718,6 +1718,8 @@ export interface IDecorationOptions {
 	range: IRange;
 	hoverMessage?: MarkedString | MarkedString[];
 	renderOptions?: IDecorationInstanceRenderOptions;
+	glyphMarginHoverMessage?: MarkedString | MarkedString[];
+	glyphMarginClassName?: string;
 }
 
 export interface ICommonCodeEditor extends IEditor {
